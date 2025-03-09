@@ -11,16 +11,7 @@ jobs:
         python-version: [3.9]
 
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Check if Python version exists
-      run: |
-        if ! command -v python${{ matrix.python-version }} &> /dev/null; then
-          echo "Python ${{ matrix.python-version }} not found. Skipping this job..."
-          exit 0
-        fi
-
-    
+    - uses: actions/checkout@v3  
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
